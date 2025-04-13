@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOZEMOK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .language-button {
+            background-color: #6c757d; /* 회색 계열 배경색 */
+            color: white; /* 버튼 글자색 */
+            border: none; /* 테두리 제거 */
+            border-radius: 5px; /* 모서리 둥글게 */
+            padding: 10px 15px; /* 패딩 */
+            font-size: 16px; /* 글자 크기 */
+            cursor: pointer; /* 커서 모양 변경 */
+            transition: background-color 0.3s; /* 배경색 전환 효과 */
+        }
+        .language-button:hover {
+            background-color: #5a6268; /* 호버 시 배경색 변경 */
+        }
+        .content, .link-section {
+            width: 98%;
+            margin: 5px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .content:hover, .link-section:hover {
+            background-color: #e9ecef;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        a {
+            display: block;
+            margin: 5px 0;
+            text-decoration: none;
+            color: black;
+            font-size: inherit;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 1.2em;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* 반응형 디자인을 위한 미디어 쿼리 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .content, .link-section {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+        }
+        .link-section {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .link-section img {
+            margin-right: 15px;
+            max-width: 100px;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function switchLanguage(lang) {
+            const content = document.getElementById('content');
+            const button = document.getElementById('language-button');
+
+            if (lang === 'en') {
+                content.innerHTML = `
+                    <h1>SOZEMOK</h1>
+                    <div class="content">
+                        <p>Hello! 
+                            SOZEMOK is a multi-cultural space where a small furniture studio & stay coexist.
+                            Inspired by tradition and Jeju, we offer private woodworking classes accompanied by tea.
+                            Experience the essence of Jeju with the stone walls, Olle trails, and Gotjawal captured in our space.
+                        </p>
+                    </div>
+                    <a href="https://pf.kakao.com/_QbExhxj" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/2/6/2023-2-6-1675687758328.webp?w=150" alt="Sozemok Studio Image">
+                            <h2>Sozemok Stay Kakao Channel Reservation and Inquiry</h2>
+                        </div>
+                    </a>
+                    <a href="http://www.airbnb.co.kr/h/sozemok1" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://a0.muscache.com/im/pictures/b1bb36fb-c862-436f-a6d0-b0fe6ee4c7f7.jpg?im_w=720" alt="Sozemok Stay Image">
+                            <h2>Sozemok Stay #1 with a Wide Window Overlooking Olle Trail - Airbnb Reservation</h2>
+                        </div>
+                    </a>
+                    <a href="http://www.airbnb.co.kr/h/sozemok2" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://a0.muscache.com/im/pictures/6fccc2f1-0fd5-48c5-9c6a-14ac2ab2dfcc.jpg?im_w=720" alt="Sozemok Stay #2 Image">
+                            <h2>Sozemok Stay #2 with Small Gotjawal Inside - Airbnb Reservation</h2>
+                        </div>
+                    </a>
+                    <a href="https://booking.naver.com/booking/6/bizes/823502?area=pll" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/4/7/2023-4-7-1680854906976.webp?w=150" alt="Woodworking Class Image">
+                            <h2>Private Woodworking Class - Naver Reservation</h2>
+                        </div>
+                    </a>
+                    <a href="https://blog.naver.com/sozemok" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2024/2/24/2024-2-24-1708778531071.webp?w=150" alt="Naver Blog Image">
+                            <h2>Woodworking Experience Products - Naver Blog</h2>
+                        </div>
+                    </a>
+                    <a href="https://pf.kakao.com/_xmaxaixj" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/4/7/2023-4-7-1680854969407.webp?w=150" alt="Kakao Inquiry Image">
+                            <h2>Furniture Orders & Classes - Kakao Channel Inquiry</h2>
+                        </div>
+                    </a>
+                `;
+                button.innerHTML = '한국어'; // Change button text to Korean
+                button.setAttribute('onclick', 'switchLanguage("ko")'); // Change function call to switch back to Korean
+            } else {
+                content.innerHTML = `
+                    <h1>SOZEMOK</h1>
+                    <div class="content">
+                        <p>안녕하세요?
+                            small furniture studio & stay가
+                            공존하는 복합문화공간
+                            소제목입니다.
+                            
+                            전통과 제주를 모티브로
+                            '일상다반의 오브제'를 지으며,
+                            차와 함께하는 프라이빗 목공 클래스를
+                            진행하고 있습니다.
+                            
+                            제주의 돌담,올레길, 곶자왈을
+                            집안 가득 담아 두었으니
+                            오롯이 제주를 느껴 보세요.</p>
+                    </div>
+                    <a href="https://pf.kakao.com/_QbExhxj" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/2/6/2023-2-6-1675687758328.webp?w=150" alt="소제목스테이#1 이미지">
+                            <h2><소제목스테이> 카톡채널 예약 및 문의</h2>
+                        </div>
+                    </a>
+                    <a href="http://www.airbnb.co.kr/h/sozemok1" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://a0.muscache.com/im/pictures/b1bb36fb-c862-436f-a6d0-b0fe6ee4c7f7.jpg?im_w=720" alt="소제목스테이#1 이미지">
+                            <h2><넓은 창에 올레길을 담아둔, 소제목스테이#1> 에어비앤비 예약</h2>
+                        </div>
+                    </a>
+                    <a href="http://www.airbnb.co.kr/h/sozemok2" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://a0.muscache.com/im/pictures/6fccc2f1-0fd5-48c5-9c6a-14ac2ab2dfcc.jpg?im_w=720" alt="소제목스테이#2 이미지">
+                            <h2><집안 가득 곶자왈을 담아둔, 소제목스테이#2> 에어비앤비 예약</h2>
+                        </div>
+                    </a>
+                    <a href="https://booking.naver.com/booking/6/bizes/823502?area=pll" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/4/7/2023-4-7-1680854906976.webp?w=150" alt="목공 클래스 이미지">
+                            <h2><프라이빗 목공 클래스> 네이버 예약</h2>
+                        </div>
+                    </a>
+                    <a href="https://blog.naver.com/sozemok" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2024/2/24/2024-2-24-1708778531071.webp?w=150" alt="네이버 블로그 이미지">
+                            <h2><목공 체험 상품보기> 네이버 블로그</h2>
+                        </div>
+                    </a>
+                    <a href="https://pf.kakao.com/_xmaxaixj" target="_blank" class="link-section">
+                        <div class="content">
+                            <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/4/7/2023-4-7-1680854969407.webp?w=150" alt="카톡 문의 이미지">
+                            <h2><가구 주문 & 출강> 카톡 채널 문의</h2>
+                        </div>
+                    </a>
+                `;
+                button.innerHTML = 'English'; // Change button text to English
+                button.setAttribute('onclick', 'switchLanguage("en")'); // Change function call to switch to English
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="language-selector">
+        <button id="language-button" class="language-button" onclick="switchLanguage('en')">English</button> <!-- 초기 버튼 텍스트는 영어 -->
+    </div>
+    <div id="content">
+        <h1>SOZEMOK</h1>
+        <div class="content">
+            <p>안녕하세요?
+                small furniture studio & stay가
+                공존하는 복합문화공간
+                소제목입니다.
+                
+                전통과 제주를 모티브로
+                '일상다반의 오브제'를 지으며,
+                차와 함께하는 프라이빗 목공 클래스를
+                진행하고 있습니다.
+                
+                제주의 돌담,올레길, 곶자왈을
+                집안 가득 담아 두었으니
+                오롯이 제주를 느껴 보세요.</p>
+        </div>
+        <a href="https://pf.kakao.com/_QbExhxj" target="_blank" class="link-section">
+            <div class="content">
+                <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/2/6/2023-2-6-1675687758328.webp?w=150" alt="소제목스테이#1 이미지">
+                <h2><소제목스테이> 카톡채널 예약 및 문의</h2>
+            </div>
+        </a>
+        <a href="www.airbnb.co.kr/h/sozemok1" target="_blank" class="link-section">
+            <div class="content">
+                <img src="https://a0.muscache.com/im/pictures/b1bb36fb-c862-436f-a6d0-b0fe6ee4c7f7.jpg?im_w=720" alt="소제목스테이#1 이미지">
+                <h2><넓은 창에 올레길을 담아둔, 소제목스테이#1> 에어비앤비 예약</h2>
+            </div>
+        </a>
+        <a href="www.airbnb.co.kr/h/sozemok1" target="_blank" class="link-section">
+            <div class="content">
+                <img src="https://a0.muscache.com/im/pictures/6fccc2f1-0fd5-48c5-9c6a-14ac2ab2dfcc.jpg?im_w=720" alt="소제목스테이#2 이미지">
+                <h2><집안 가득 곶자왈을 담아둔, 소제목스테이#2> 에어비앤비 예약</h2>
+            </div>
+        </a>
+        <a href="https://www.your-woodworking-class-link.com" target="_blank" class="link-section">
+            <div class="content">
+                <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/4/7/2023-4-7-1680854906976.webp?w=150" alt="목공 클래스 이미지">
+                <h2><프라이빗 목공 클래스> 네이버 예약</h2>
+            </div>
+        </a>
+        <a href="https://blog.naver.com/your-blog-link" target="_blank" class="link-section">
+            <div class="content">
+                <img src="https://d13k46lqgoj3d6.cloudfront.net/2024/2/24/2024-2-24-1708778531071.webp?w=150" alt="네이버 블로그 이미지">
+                <h2><목공 체험 상품보기> 네이버 블로그</h2>
+            </div>
+        </a>
+        <a href="https://open.kakao.com/o/your-kakao-link" target="_blank" class="link-section">
+            <div class="content">
+                <img src="https://d13k46lqgoj3d6.cloudfront.net/2023/4/7/2023-4-7-1680854969407.webp?w=150" alt="카톡 문의 이미지">
+                <h2><가구 주문 & 출강> 카톡 채널 문의</h2>
+            </div>
+        </a>
+    </div>
+</body>
