@@ -224,7 +224,7 @@ a {
 }
 
 /* 반응형 디자인 */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .landing-container {
         flex-direction: column;
         height: auto;
