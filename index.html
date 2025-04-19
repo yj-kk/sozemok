@@ -7,7 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script>
+        // 즉시 실행 모바일 감지 스크립트
+        (function() {
+            var isMobile = /iPhone|iPad|iPod|Android|Windows Phone|BlackBerry/i.test(navigator.userAgent) || window.innerWidth <= 768;
+            if (isMobile) {
+                document.documentElement.className += ' mobile-view ios-device';
+            }
+        })();
+    </script>
     <style>
         /* 기본 스타일 */
         :root {
@@ -236,8 +244,10 @@
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
         }
         
-        /* 반응형 디자인 */
-        @media screen and (max-width: 992px) {
+        /* 모바일 뷰 기본 적용 (모든 화면) */
+        @media (max-width: 768px), 
+               (max-device-width: 768px),
+               (orientation: portrait) and (max-width: 992px) {
             .landing-container {
                 flex-direction: column !important;
                 height: auto !important;
@@ -277,6 +287,45 @@
             .kakao-item .service-icon {
                 width: 40px !important;
                 height: 40px !important;
+            }
+        }
+        
+        /* 클래스 기반 모바일 스타일 - 스크립트가 작동하지 않아도 적용됨 */
+        .mobile-view .landing-container {
+            flex-direction: column !important;
+            height: auto !important;
+            min-height: auto !important;
+        }
+        
+        .mobile-view .left-section,
+        .mobile-view .right-section {
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        .mobile-view .left-section {
+            padding: 30px !important;
+        }
+        
+        .mobile-view .right-section {
+            padding: 30px !important;
+        }
+        
+        .mobile-view .product-image {
+            margin-top: 20px !important;
+            margin-bottom: 30px !important;
+        }
+        
+        .mobile-view .product-image img {
+            max-height: 450px !important;
+        }
+        
+        /* 모바일에서 직접 모든 요소 강제 정렬 */
+        @media screen and (max-width: 768px) {
+            html, body {
+                overflow-x: hidden;
+                width: 100%;
+                min-height: 100%;
             }
         }
     </style>
@@ -372,7 +421,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // 모바일 환경 감지 및 적용
             function checkMobile() {
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 992;
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
                 if (isMobile) {
                     document.body.classList.add('mobile-view');
                     
@@ -411,8 +460,43 @@
             
             // 방향 전환 감지
             window.addEventListener('orientationchange', checkMobile);
+            
+            // 서비스 항목 링크 설정
+            document.querySelectorAll('.service-item').forEach(function(item, index) {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function() {
+                    switch(index) {
+                        case 0: // 목공 체험
+                            window.location.href = 'https://booking.naver.com/booking/6/bizes/823502?area=pll';
+                            break;
+                        case 1: // 스테이 #1
+                            window.location.href = 'https://www.airbnb.co.kr/h/sozemok1';
+                            break;
+                        case 2: // 스테이 #2
+                            window.location.href = 'https://www.airbnb.co.kr/h/sozemok2';
+                            break;
+                        case 3: // 문의하기
+                            window.location.href = 'https://pf.kakao.com/_QbExhxj';
+                            break;
+                    }
+                });
+            });
+            
+            // 소셜 링크 설정
+            document.querySelectorAll('.social-item').forEach(function(item, index) {
+                item.style.cursor = 'pointer';
+                item.addEventListener('click', function() {
+                    switch(index) {
+                        case 0: // @sozemok
+                            window.location.href = 'https://www.instagram.com/sozemok';
+                            break;
+                        case 1: // @sozemok_stay
+                            window.location.href = 'https://www.instagram.com/sozemok_stay';
+                            break;
+                    }
+                });
+            });
         });
     </script>
-    <script src="scripts.js"></script>
 </body>
 </html> 
