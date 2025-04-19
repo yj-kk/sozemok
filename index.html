@@ -8,6 +8,278 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* 기본 스타일 */
+        :root {
+            --primary-color: #243B36;
+            --text-color: #333333;
+            --text-secondary: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            height: 100vh;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* 랜딩 페이지 컨테이너 */
+        .landing-container {
+            display: flex;
+            height: 100vh;
+            min-height: 100%;
+            width: 100%;
+        }
+        
+        /* 왼쪽 섹션 */
+        .left-section {
+            width: 60%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f8f3f2;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+            margin-top: 30px;
+        }
+        
+        .sozemok-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .product-image {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .product-image img {
+            max-height: 90%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        
+        /* 오른쪽 섹션 */
+        .right-section {
+            width: 40%;
+            padding: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .description {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .description p {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .services {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        
+        .service-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background-color: white;
+            flex-shrink: 0;
+            order: 0;
+        }
+        
+        .service-icon img {
+            width: 70%;
+            height: auto;
+            border-radius: 0;
+        }
+        
+        .service-image {
+            margin-right: 15px;
+            flex-shrink: 0;
+            width: 80px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 5px;
+            order: 1;
+        }
+        
+        .service-thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .service-text {
+            flex: 1;
+            margin-top: 0;
+            text-align: left;
+            order: 2;
+        }
+        
+        .service-text p {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .naver-icon {
+            background-color: #03C75A;
+        }
+        
+        .airbnb-icon {
+            background-color: #FF5A5F;
+        }
+        
+        .kakao-item {
+            justify-content: flex-start;
+        }
+        
+        .kakao-item .service-icon {
+            margin-left: 0;
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+        
+        .kakao-item .service-text {
+            margin-top: 0;
+            text-align: left;
+        }
+        
+        .kakao-icon {
+            background-color: #FFE812;
+        }
+        
+        .social-links {
+            margin-top: 0;
+        }
+        
+        .social-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .social-item:last-child {
+            border-bottom: none;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        
+        .social-icon img {
+            width: 70%;
+            height: auto;
+        }
+        
+        .social-text p {
+            font-size: 14px;
+        }
+        
+        .instagram-icon {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        /* 반응형 디자인 */
+        @media screen and (max-width: 992px) {
+            .landing-container {
+                flex-direction: column !important;
+                height: auto !important;
+            }
+            
+            .left-section, .right-section {
+                width: 100% !important;
+                height: auto !important;
+            }
+            
+            .left-section {
+                padding: 30px !important;
+            }
+            
+            .right-section {
+                padding: 30px !important;
+            }
+            
+            .product-image {
+                margin-top: 20px !important;
+                margin-bottom: 30px !important;
+            }
+            
+            .product-image img {
+                max-height: 450px !important;
+            }
+            
+            .service-item {
+                padding: 12px 0 !important;
+            }
+            
+            .service-image {
+                width: 60px !important;
+                height: 45px !important;
+            }
+            
+            .kakao-item .service-icon {
+                width: 40px !important;
+                height: 40px !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="landing-container">
@@ -29,11 +301,11 @@
 
             <div class="services">
                 <div class="service-item">
+                    <div class="service-icon naver-icon">
+                        <img src="public/images/naver.png" alt="네이버">
+                    </div>
                     <div class="service-image">
                         <img src="public/images/woodworking.png" alt="목공 체험" class="service-thumbnail">
-                    </div>
-                    <div class="service-icon">
-                        <img src="public/images/naver.png" alt="네이버">
                     </div>
                     <div class="service-text">
                         <p>Woodworking Experience</p>
@@ -41,11 +313,11 @@
                 </div>
 
                 <div class="service-item">
-                    <div class="service-image">
-                        <img src="public/images/airbnb1.png" alt="스테이 #1">
-                    </div>
-                    <div class="service-icon">
+                    <div class="service-icon airbnb-icon">
                         <img src="public/images/airbnb.svg" alt="에어비앤비">
+                    </div>
+                    <div class="service-image">
+                        <img src="public/images/airbnb1.png" alt="스테이 #1" class="service-thumbnail">
                     </div>
                     <div class="service-text">
                         <p>SOZEMOK STAY #1</p>
@@ -53,11 +325,11 @@
                 </div>
 
                 <div class="service-item">
-                    <div class="service-image">
-                        <img src="public/images/airbnb2.png" alt="스테이 #2">
-                    </div>
-                    <div class="service-icon">
+                    <div class="service-icon airbnb-icon">
                         <img src="public/images/airbnb.svg" alt="에어비앤비">
+                    </div>
+                    <div class="service-image">
+                        <img src="public/images/airbnb2.png" alt="스테이 #2" class="service-thumbnail">
                     </div>
                     <div class="service-text">
                         <p>SOZEMOK STAY #2</p>
@@ -95,6 +367,52 @@
         </div>
     </div>
 
+    <script>
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            // 모바일 환경 감지 및 적용
+            function checkMobile() {
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 992;
+                if (isMobile) {
+                    document.body.classList.add('mobile-view');
+                    
+                    // iOS 기기에 대한 추가 처리
+                    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                        document.body.classList.add('ios-device');
+                        
+                        // 특정 iOS 버전에 대한 처리 (iPhone 12 등)
+                        if (/iPhone13|iPhone12/i.test(navigator.userAgent)) {
+                            document.body.classList.add('iphone12');
+                        }
+                    }
+                    
+                    // 모바일용 스타일 강제 적용
+                    const container = document.querySelector('.landing-container');
+                    const leftSection = document.querySelector('.left-section');
+                    const rightSection = document.querySelector('.right-section');
+                    
+                    if (container) {
+                        container.style.flexDirection = 'column';
+                        container.style.height = 'auto';
+                    }
+                    
+                    if (leftSection && rightSection) {
+                        leftSection.style.width = '100%';
+                        rightSection.style.width = '100%';
+                    }
+                }
+            }
+            
+            // 초기 실행
+            checkMobile();
+            
+            // 화면 크기 변경 감지
+            window.addEventListener('resize', checkMobile);
+            
+            // 방향 전환 감지
+            window.addEventListener('orientationchange', checkMobile);
+        });
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html> 
