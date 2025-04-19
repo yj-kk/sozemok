@@ -313,4 +313,19 @@ a {
 .iphone12 .landing-container {
     flex-direction: column !important;
     height: auto !important;
-} 
+}
+
+<head>
+  <style>
+    @media screen and (max-width: 992px) {
+      .landing-container {
+        flex-direction: column !important;
+        height: auto !important;
+      }
+      .left-section, .right-section {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head> 
