@@ -34,6 +34,8 @@ a {
 .landing-container {
     display: flex;
     height: 100vh;
+    min-height: 100%;
+    width: 100%;
 }
 
 /* 왼쪽 섹션 */
@@ -224,7 +226,7 @@ a {
 }
 
 /* 반응형 디자인 */
-@media (max-width: 992px) {
+@media screen and (max-width: 992px), screen and (max-device-width: 992px) {
     .landing-container {
         flex-direction: column;
         height: auto;
@@ -269,4 +271,46 @@ a {
         width: 40px;
         height: 40px;
     }
+}
+
+/* iOS 기기에 대한 추가 미디어 쿼리 */
+@media screen and (min-device-width: 375px) and (max-device-width: 896px) and (-webkit-min-device-pixel-ratio: 2) {
+    .landing-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* 모바일 뷰 클래스 */
+.mobile-view .landing-container {
+    flex-direction: column;
+    height: auto;
+}
+
+.mobile-view .left-section,
+.mobile-view .right-section {
+    width: 100%;
+    height: auto;
+}
+
+/* iOS 디바이스 특별 스타일 */
+.ios-device .landing-container {
+    flex-direction: column !important;
+    height: auto !important;
+}
+
+.ios-device .left-section,
+.ios-device .right-section {
+    width: 100% !important;
+}
+
+/* iPhone 12 특별 스타일 */
+.iphone12 .landing-container {
+    flex-direction: column !important;
+    height: auto !important;
 } 

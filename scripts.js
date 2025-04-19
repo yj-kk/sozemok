@@ -35,6 +35,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // 모바일 환경 감지 및 적용
+    function checkMobile() {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth <= 992;
+        if (isMobile) {
+            document.body.classList.add('mobile-view');
+            
+            // iOS 기기에 대한 추가 처리
+            if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                document.body.classList.add('ios-device');
+                
+                // 특정 iOS 버전에 대한 처리 (iPhone 12 등)
+                if (/iPhone13|iPhone12/i.test(navigator.userAgent)) {
+                    document.body.classList.add('iphone12');
+                }
+            }
+        }
+    }
+    
+    // 초기 실행
+    checkMobile();
+    
     // 서비스 아이템에 호버 효과 추가
     const serviceItems = document.querySelectorAll('.service-item');
     
@@ -96,14 +117,23 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkScreenSize() {
         const productImage = document.querySelector('.product-image img');
         
-        if (window.innerWidth <= 768) {
-            productImage.style.maxHeight = '300px';
+        if (window.innerWidth <= 992) {
+            productImage.style.maxHeight = '450px';
         } else {
-            productImage.style.maxHeight = '70%';
+            productImage.style.maxHeight = '90%';
         }
     }
     
     // 초기 실행 및 화면 크기 변경 시 실행
     checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
+    window.addEventListener('resize', function() {
+        checkScreenSize();
+        checkMobile();
+    });
+    
+    // 방향 전환 감지 (아이폰 가로/세로 모드 전환 시)
+    window.addEventListener('orientationchange', function() {
+        checkMobile();
+        checkScreenSize();
+    });
 }); 
