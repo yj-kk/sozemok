@@ -1,0 +1,15 @@
+이 폴더에 다음 이미지 파일을 준비해주세요:
+
+1. furniture.jpg - 메인 가구 이미지
+2. naver-icon.png - 네이버 아이콘
+3. airbnb-icon.png - 에어비앤비 아이콘
+4. kakao-icon.png - 카카오톡 아이콘
+5. instagram-icon.png - 인스타그램 아이콘
+
+이미지가 없을 경우, 아래 URL을 사용하도록 index.html 파일을 수정할 수 있습니다:
+
+- 가구 이미지: https://images.unsplash.com/photo-1592078615290-033ee584e267?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80
+- 네이버 아이콘: https://upload.wikimedia.org/wikipedia/commons/2/23/Naver_Logotype.svg
+- 에어비앤비 아이콘: https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg
+- 카카오톡 아이콘: https://upload.wikimedia.org/wikipedia/commons/e/e3/KakaoTalk_logo.svg
+- 인스타그램 아이콘: https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg 

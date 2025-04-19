@@ -1,0 +1,272 @@
+/* 기본 설정 */
+:root {
+    --primary-color: #243B36;
+    --text-color: #333333;
+    --text-secondary: #666666;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 랜딩 페이지 컨테이너 */
+.landing-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* 왼쪽 섹션 */
+.left-section {
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f8f3f2;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.sozemok-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.product-image img {
+    max-height: 90%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* 오른쪽 섹션 */
+.right-section {
+    width: 40%;
+    padding: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.description p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.service-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: white;
+    flex-shrink: 0;
+    order: 0;
+}
+
+.service-icon img {
+    width: 70%;
+    height: auto;
+    border-radius: 0;
+}
+
+.service-image {
+    margin-right: 15px;
+    flex-shrink: 0;
+    width: 80px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 5px;
+    order: 1;
+}
+
+.service-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-text {
+    flex: 1;
+    margin-top: 0;
+    text-align: left;
+    order: 2;
+}
+
+.service-text p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.naver-icon {
+    background-color: #03C75A;
+}
+
+.airbnb-icon {
+    background-color: #FF5A5F;
+}
+
+.kakao-item {
+    justify-content: flex-start;
+}
+
+.kakao-item .service-icon {
+    margin-left: 0;
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+
+.kakao-item .service-text {
+    margin-top: 0;
+    text-align: left;
+}
+
+.kakao-icon {
+    background-color: #FFE812;
+}
+
+.social-links {
+    margin-top: 0;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-item:last-child {
+    border-bottom: none;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.social-icon img {
+    width: 70%;
+    height: auto;
+}
+
+.social-text p {
+    font-size: 14px;
+}
+
+.instagram-icon {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .landing-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-section {
+        padding: 30px;
+    }
+
+    .right-section {
+        padding: 30px;
+    }
+
+    .product-image {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .product-image img {
+        max-height: 450px;
+    }
+
+    .description {
+        margin-top: 20px;
+    }
+    
+    .service-item {
+        padding: 12px 0;
+    }
+    
+    .service-image {
+        width: 60px;
+        height: 45px;
+    }
+
+    .kakao-item .service-icon {
+        width: 40px;
+        height: 40px;
+    }
+} 
